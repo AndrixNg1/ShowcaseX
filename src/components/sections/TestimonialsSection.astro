@@ -1,0 +1,205 @@
+---
+const testimonials = [
+  {
+    name: "Leslie Alexander",
+    username: "@lesliealexander",
+    image: "/images/icons/show.png",
+    text: "“Showcasex m’a permis de collaborer avec des créateurs incroyables. Chaque projet est une expérience inspirante.”",
+  },
+  {
+    name: "Michael Foster",
+    username: "@michaelfoster",
+    image: "/images/icons/show.png",
+    text: "“Une plateforme fluide, intuitive et performante. L’interface est un modèle de clarté et d’élégance.”",
+  },
+  {
+    name: "Brenna Goyette",
+    username: "@brennagoyette",
+    image: "/images/icons/show.png",
+    text: "“La qualité des créations présentées ici dépasse toutes mes attentes. Un vrai hub pour les passionnés du design moderne.”",
+    highlight: true,
+  },
+  {
+    name: "Lindsay Walton",
+    username: "@lindsaywalton",
+    image: "/images/icons/show.png",
+    text: "“J’adore la façon dont Showcasex met en avant la créativité et la cohérence visuelle.”",
+  },
+  {
+    name: "Leonard Krasner",
+    username: "@leonardkrasner",
+    image: "/images/icons/show.png",
+    text: "“Une communauté vivante, un design exceptionnel et des outils puissants. Bravo à l’équipe.”",
+  },
+  {
+    name: "Tom Cook",
+    username: "@tomcook",
+    image: "/images/icons/show.png",
+    text: "“Showcasex combine élégance et performance. C’est un plaisir d’y exposer mes créations.”",
+  },
+  {
+    name: "Amara Diop",
+    username: "@amaradiop",
+    image: "/images/icons/show.png",
+    text: "“Une expérience fluide et des fonctionnalités bien pensées. Bravo pour cette vision moderne.”",
+  },
+  {
+    name: "Hugo Martin",
+    username: "@hugomartin",
+    image: "/images/icons/show.png",
+    text: "“L’esthétique et la simplicité d’usage rendent la création tellement agréable.”",
+  },
+  {
+    name: "Chloé Bernard",
+    username: "@chloebernard",
+    image: "/images/icons/show.png",
+    text: "“Le support communautaire et la visibilité offerte par Showcasex sont exceptionnels.”",
+  },
+  {
+    name: "Noah Diallo",
+    username: "@noahdiallo",
+    image: "/images/icons/show.png",
+    text: "“Des collaborations enrichissantes et une communauté vibrante.”",
+  },
+  {
+    name: "Inès Moreau",
+    username: "@inesmoreau",
+    image: "/images/icons/show.png",
+    text: "“Un univers où le design et la technologie fusionnent parfaitement.”",
+  },
+];
+---
+
+<section class="relative py-32 bg-white overflow-hidden">
+  <!-- Fond flou décoratif -->
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-orange-100/20 via-pink-100/10 to-blue-100/20 blur-3xl pointer-events-none"
+  >
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <!-- En-tête -->
+    <h2
+      class="text-sm font-semibold tracking-wide text-orange-500 uppercase mb-4"
+    >
+      Témoignages
+    </h2>
+    <h3
+      class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-10"
+    >
+      Ce que disent nos
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500"
+      >
+        créateurs inspirants
+      </span>
+    </h3>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-20">
+      Découvrez l’impact de Showcasex à travers les voix de nos utilisateurs et
+      partenaires créatifs.
+    </p>
+    <!-- Structure 3 colonnes -->
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[0.75fr_1.6fr_0.75fr] gap-10 max-w-7xl mx-auto text-left items-start"
+    >
+      <!-- Colonne gauche -->
+      <div class="flex flex-col gap-8">
+        {
+          testimonials.slice(0, 3).map((item) => (
+            <div class="rounded-3xl bg-white shadow-md border border-orange-100 p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <p class="text-gray-700 mb-5 leading-relaxed">{item.text}</p>
+              <div class="flex items-center gap-3">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="w-10 h-10 rounded-full border-2 border-orange-300/40"
+                />
+                <div>
+                  <p class="font-semibold text-gray-900">{item.name}</p>
+                  <p class="text-xs text-gray-500">{item.username}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+<!-- 💬 Témoignages section -->
+<div
+  class="flex flex-col gap-10 w-full max-w-6xl mx-auto px-6 md:px-0"
+>
+  <!-- 🟠 Carte principale -->
+  <div
+    class="rounded-3xl shadow-2xl border-2 border-orange-300 bg-gradient-to-br from-orange-50 via-white to-pink-50 p-8 sm:p-10 md:p-14 hover:shadow-3xl hover:-translate-y-2 hover:scale-[1.04] transition-all duration-300"
+  >
+    <p class="text-gray-800 mb-6 text-base sm:text-lg leading-relaxed">
+      {testimonials.find((t) => t.highlight)?.text}
+    </p>
+    <div class="flex items-center gap-5">
+      <img
+        src={testimonials.find((t) => t.highlight)?.image}
+        alt={testimonials.find((t) => t.highlight)?.name}
+        class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-orange-400/50"
+      />
+      <div>
+        <p class="font-semibold text-gray-900 text-base sm:text-lg">
+          {testimonials.find((t) => t.highlight)?.name}
+        </p>
+        <p class="text-sm text-gray-500">
+          {testimonials.find((t) => t.highlight)?.username}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔸 Bloc 2x2 responsive -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+    {
+      testimonials.slice(3, 7).map((item) => (
+        <div
+          class="rounded-3xl bg-white shadow-md border border-orange-100 p-6 sm:p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+        >
+          <p class="text-gray-700 mb-5 text-sm sm:text-base leading-relaxed">
+            {item.text}
+          </p>
+          <div class="flex items-center gap-3">
+            <img
+              src={item.image}
+              alt={item.name}
+              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-orange-300/40"
+            />
+            <div>
+              <p class="font-semibold text-gray-900">{item.name}</p>
+              <p class="text-xs text-gray-500">{item.username}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+      <!-- Colonne droite -->
+      <div class="flex flex-col gap-8">
+        {
+          testimonials.slice(7, 10).map((item) => (
+            <div class="rounded-3xl bg-white shadow-md border border-orange-100 p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <p class="text-gray-700 mb-5 leading-relaxed">{item.text}</p>
+              <div class="flex items-center gap-3">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="w-10 h-10 rounded-full border-2 border-orange-300/40"
+                />
+                <div>
+                  <p class="font-semibold text-gray-900">{item.name}</p>
+                  <p class="text-xs text-gray-500">{item.username}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
